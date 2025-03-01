@@ -8,15 +8,21 @@
 }
 
 /* Estilos generales */
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #003366;
     font-family: 'Alata', sans-serif;
     color: #FFCC66;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
+    display: flex;              /* Para distribución en columna */
+    flex-direction: column;     
+    align-items: center;        /* Centra horizontalmente el contenido */
+    /* overflow-y: auto;       Si lo deseas, puedes forzar scroll vertical */
 }
 
 /* HEADER */
@@ -96,8 +102,8 @@ header img {
 }
 
 .contact a img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     padding: 10px;
     transition: transform 0.3s ease-in-out;
@@ -109,14 +115,17 @@ header img {
 
 /* PIE DE PÁGINA */
 footer {
-    /* Dos columnas principales: QR a la izquierda, textos + íconos a la derecha */
+    /* Alineamos en dos “columnas”: QR a la izquierda, rigth_footer a la derecha */
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start; /* Alinea parte superior del QR con texto/íconos */
-    justify-content: center; /* Centra todo horizontalmente en pantallas grandes */
+    align-items: flex-start; /* Alinea la parte superior del QR con el bloque derecho */
+    justify-content: center; /* Centra en pantallas grandes */
     gap: 40px;
     padding: 20px;
     margin-top: 30px;
+
+    /* Evita que el footer se encoja si la pantalla es más pequeña */
+    flex-shrink: 0;
 }
 
 footer img {
@@ -130,7 +139,7 @@ footer img {
 .rigth_footer {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Espacio entre el texto y las redes sociales */
+    gap: 20px; /* Espacio entre texto y redes sociales */
 }
 
 /* Texto encima de las redes sociales */
